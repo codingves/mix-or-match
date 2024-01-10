@@ -32,8 +32,9 @@ const showModal = (content, innerHtml = false) => {
 const setTime = () => {
   const interval = setInterval(() => {
     time--;
-    timeElement.textContent = time;
-    if (time === 0) {
+    if (time >= 0) {
+      timeElement.textContent = time;
+    } else {
       clearInterval(interval);
 
       if (!isWin()) {
